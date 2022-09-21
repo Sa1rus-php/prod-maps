@@ -86,7 +86,6 @@
             xhr.open('POST', '/get-xlsx', true);
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.send(JSON.stringify({places: place, word: keyword}));
-        alert('Подождите до 20 минут, запрос обрабатывается!');
         xhr.onload  = function() {
             const jsonResponse = xhr.response;
             console.log(jsonResponse);

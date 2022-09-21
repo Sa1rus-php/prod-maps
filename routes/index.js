@@ -54,12 +54,12 @@ async function getLocalPlacesInfo(query) {
   };
 
   const browser = await puppeteer.launch({
-    headless: true,
-    executablePath: '/usr/bin/google-chrome',
+    headless: false,
+    // executablePath: '/usr/bin/google-chrome',
     args: [
       "--no-sandbox",
-      "--disable-setuid-sandbox",
-      '--window-size=1440,1000'
+      // "--disable-setuid-sandbox",
+      // '--window-size=1440,1000'
     ],
   });
 
