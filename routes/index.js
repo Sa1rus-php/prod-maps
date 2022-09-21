@@ -68,11 +68,15 @@ async function getLocalPlacesInfo(query) {
     const URL = `${requestParams.baseURL}/maps/search/${requestParams.query}?hl=${requestParams.hl}`;
     await page.setDefaultNavigationTimeout(60000);
     await page.goto(URL);
+    const [button] = await page.$x("//*[@id=\"yDmH0d\"]/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/div[1]/form[2]/div/div/button");
+    if (button) {
+      await button.click();
+    }
     await page.waitForNavigation();
     const scrollContainer = ".m6QErb[aria-label]";
     let localPlacesInfo = [];
     // let res = [];
-    await scrollPage(page, scrollContainer);
+    // await scrollPage(page, scrollContainer);
 
     await page.waitForTimeout(2000);
     const elHandleArray = await page.$$('div.Nv2PK')
