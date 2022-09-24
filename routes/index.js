@@ -54,7 +54,7 @@ async function getLocalPlacesInfo(query) {
   };
 
   const browser = await puppeteer.launch({
-    headless: false,
+    headless: true,
     // executablePath: '/usr/bin/google-chrome',
     args: [
       "--no-sandbox",
